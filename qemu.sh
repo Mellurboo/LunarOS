@@ -1,5 +1,5 @@
 #!/bin/sh
 set -e
-. ./iso.sh
+. ./buildboot.sh
 
 qemu-system-$(./target-triplet-to-arch.sh $HOST) -cdrom lunaros.iso

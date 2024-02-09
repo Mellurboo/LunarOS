@@ -14,7 +14,11 @@ export BOOTDIR=/boot
 export LIBDIR=$EXEC_PREFIX/lib
 export INCLUDEDIR=$PREFIX/include
 
-export CFLAGS='-O2 -g'
+CFLAGS='-O2 '
+if [ -z "$NDEBUG" ]; then
+	CFLAGS+=' -g3'
+fi
+export CFLAGS
 export CPPFLAGS=''
 
 export SYSROOT="$(pwd)/sysroot"
