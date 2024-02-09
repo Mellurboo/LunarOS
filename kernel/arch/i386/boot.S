@@ -45,9 +45,9 @@ _start:
 	movl $1023, %ecx			#last + 1 reserve
 
 	movl $top_stack, %esp
-	call _init
+	xor %ebp, %ebp
+	push %ebp
 
-	call kernel_main
 
 1:
 	#Map the kernel
