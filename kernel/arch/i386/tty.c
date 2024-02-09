@@ -68,7 +68,6 @@ void tty_putchar(char c) {
 	{
 		case '\n':
 		{
-			if (c == '\n')
 			tty_column = 0;
 			tty_row++;
 			return;
