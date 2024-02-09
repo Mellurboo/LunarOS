@@ -48,7 +48,6 @@ _start:
 	xor %ebp, %ebp
 	push %ebp
 
-	call kernel_main
 
 1:
 	#Map the kernel
