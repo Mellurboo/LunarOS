@@ -1,9 +1,6 @@
-#					quick note also the stack might be fucked
-#	REFERENCE SHIT BECAUSE IM REALLY BAD AT MEMORISING THINGS
 #		VGA PT (0x0...) 0 -> (0xC03FFFFF) 768
 #			for the VGA Memory there are 768 entires
 #			we do map bot the start and the (end * 4)
-#
 
 
 # Multiboot 

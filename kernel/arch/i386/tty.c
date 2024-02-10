@@ -1,15 +1,14 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
- 
 #include <kernel/tty.h>
- 
+
 #include "vga.h"
- 
-static const size_t VGA_WIDTH = 80;
-static const size_t VGA_HEIGHT = 25;
-static uint16_t* const VGA_MEMORY = (uint16_t*) 0xC03FF000;
- 
+
+#define VGA_WIDTH 	80
+#define VGA_HEIGHT 	25
+#define VGA_MEMORY 	((uint16_t*)0xC03FF000)
+
 static size_t tty_row;
 static size_t tty_column;
 static uint8_t tty_color;

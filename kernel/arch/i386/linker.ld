@@ -4,7 +4,6 @@ SECTIONS
 {
 	. = 1M;
 
-
 	_kernel_start = .;
         .multiboot.data : {
             *(.multiboot.data)
