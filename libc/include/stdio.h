@@ -3,8 +3,6 @@
 
 #include <sys/cdefs.h>
 
-#define EOF (-1)
-
 #ifdef __cplusplus
 extern "C" {
 #endif

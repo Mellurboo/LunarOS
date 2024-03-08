@@ -92,12 +92,7 @@ void tty_putchar(char c) {
 	}
 }
 
-// this is my favourite thing possibly ever 
 void tty_write(const char* data, size_t size) {
 	for (size_t i = 0; i < size; i++)
 		tty_putchar(data[i]);
-}
- 
-void tty_writestring(const char* data) {
-	tty_write(data, strlen(data));
 }

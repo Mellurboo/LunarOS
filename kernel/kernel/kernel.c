@@ -5,8 +5,8 @@
 
 void kernel_main(void) {
   tty_initialize();
-  tty_writestring("Hello from tty_writestring because printf is broken rn");
-  printf("col");
+  
+  printf("LC PRINTF");
   
   // causes the OS to reset. i think its a pagefaut
 }

@@ -32,6 +32,7 @@ LIBS:=$(LIBS) $(KERNEL_ARCH_LIBS)
 KERNEL_OBJS=\
 $(KERNEL_ARCH_OBJS) \
 kernel/kernel.o \
+include/kernel/tty.o \
 
 OBJS=\
 $(KERNEL_OBJS) \

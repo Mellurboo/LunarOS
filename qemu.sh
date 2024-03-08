@@ -2,4 +2,7 @@
 set -e
 . ./buildboot.sh
 
-qemu-system-$(./target-triplet-to-arch.sh $HOST) -cdrom lunaros.iso
+QEMU_BIN="qemu-system-$(./target-triplet-to-arch.sh $HOST)"
+ISO_FILE="lunaros.iso"
+
+$QEMU_BIN -cdrom $ISO_FILE
