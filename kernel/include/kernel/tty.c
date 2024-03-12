@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
-#include <kernel/tty.h>
+#include "tty.h"
 
 #include "vga.h"
 
@@ -17,7 +17,7 @@ static uint16_t* tty_buffer;
 void tty_initialize(void) {
 	tty_row = 0;
 	tty_column = 0;
-	tty_color = vga_entry_color(COLOR_WHITE, COLOR_CYAN);
+	tty_color = TTY_DEFAULT;
 	tty_buffer = VGA_MEMORY;
 	for (size_t y = 0; y < VGA_HEIGHT; y++) {
 		for (size_t x = 0; x < VGA_WIDTH; x++) {

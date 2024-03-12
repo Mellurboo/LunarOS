@@ -16,6 +16,26 @@
 .long FLAGS
 .long CHECKSUM
 
+# Defining GDT descriptors
+gdt_start:
+.null_segment:
+	.word 0, 0
+.code_segment:
+	.word 0xffff, 0
+	.byte 0, 0, 0, 0x9a, 0xcf
+.data_segment:
+	.word 0xffff, 0
+	.byte 0, 0, 0, 0x92, 0xcf
+gdt_end:
+
+gdt_ptr:
+	.word gdt_end - gdt_start - 1
+	.long gdt_start
+
+#loading our GDT
+mov $gdt_ptr, %eax
+lgdt (%eax)
+
 # reserve stack space (16kb)
 .section .bootstrap_stack, "aw", @nobits
 .align 16
@@ -44,7 +64,6 @@ _start:
 	movl $top_stack, %esp
 	xor %ebp, %ebp
 	push %ebp
-
 
 1:
 	#Map the kernel
