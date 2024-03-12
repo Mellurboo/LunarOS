@@ -10,6 +10,7 @@ void kernel_main(void) {
   printf("Kernel Main\n");
   printf("Welcome to the Lunar Kernel!");
 
+  // yeah i do this on purpose to check the tty_error color, change it to 0 or 1 for real results!
   shutdown(12021);
 }
 
