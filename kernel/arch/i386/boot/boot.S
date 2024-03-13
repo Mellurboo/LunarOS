@@ -16,6 +16,7 @@
 .long FLAGS
 .long CHECKSUM
 
+
 # Defining GDT descriptors
 gdt_start:
 .null_segment:
@@ -60,7 +61,7 @@ _start:
 	movl $(boot_page_table - 0xC0000000), %edi
 	movl $0, %esi				#first
 	movl $1023, %ecx			#last + 1 reserve
-
+	
 	movl $top_stack, %esp
 	xor %ebp, %ebp
 	push %ebp
@@ -108,6 +109,9 @@ _start:
 	movl %ecx, %cr3
 
 	mov $top_stack, %esp
+
+	#mov %ebx, %eax
+	#mov %eax, multiboot_info_ptr
 	call kernel_main  
 
 	cli

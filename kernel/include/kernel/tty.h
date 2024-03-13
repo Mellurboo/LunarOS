@@ -6,6 +6,7 @@
 
 #define TTY_DEFAULT 0x9F
 #define TTY_ERROR   0X4F
+#define TTY_WARNING 0x07
 
 void tty_initialize(void);
 void tty_setcolor(uint8_t color);
